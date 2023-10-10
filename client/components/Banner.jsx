@@ -4,7 +4,13 @@ const Banner = () => {
 	return (
 		<>
 			<div className="banner_box">
-				<div className="grid">
+				<div
+					className="grid"
+					style={{
+						gridTemplateColumns: "0.9fr 1fr",
+						alignItems: "center",
+					}}
+				>
 					<div>
 						<h1
 							style={{
@@ -27,7 +33,13 @@ const Banner = () => {
 							<small>Buy the ticket</small>
 						</Link>
 					</div>
-					<div>{/* <img src="collage.jpe" alt="" /> */}</div>
+					<div>
+						<img
+							src="banner.jpeg"
+							alt=""
+							style={{ width: "-webkit-fill-available" }}
+						/>
+					</div>
 				</div>
 			</div>
 		</>

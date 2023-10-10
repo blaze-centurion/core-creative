@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { MdOutlineCancel } from "react-icons/md";
 import { BsCheck2Circle } from "react-icons/bs";
 import TicketCard from "@/components/TicketCard";
+import Footer from "@/components/Footer";
 
 const Ticket = () => {
 	const [modalOpen, setModalOpen] = useState(false);
@@ -158,14 +159,14 @@ const Ticket = () => {
 					setModalOpen={setModalOpen}
 					setTicketType={setTicketType}
 					type="Basic"
-					price="$45.00"
+					price="$60.00"
 				>
 					<li>
-						<small>Watch Stream Online</small>
+						<small>Watch Match Online</small>
 						<BsCheck2Circle fill="green" />
 					</li>
 					<li>
-						<small>Watch Stream at stadium</small>
+						<small>Watch Match at stadium</small>
 						<MdOutlineCancel fill="red" />
 					</li>
 					<li>
@@ -177,7 +178,8 @@ const Ticket = () => {
 					</li>
 					<li>
 						<small>
-							Eligible for lucky draw for original signed goodies from Salman khan and Kanye west
+							Eligible for lucky draw for original signed goodies
+							from Salman khan and Kanye west
 						</small>
 						<MdOutlineCancel fill="red" />
 					</li>
@@ -186,14 +188,14 @@ const Ticket = () => {
 					setModalOpen={setModalOpen}
 					setTicketType={setTicketType}
 					type="Standard"
-					price="$100.00"
+					price="$160.00"
 				>
 					<li>
-						<small>Watch Stream Online</small>
+						<small>Watch Match Online</small>
 						<BsCheck2Circle fill="green" />
 					</li>
 					<li>
-						<small>Watch Stream at stadium</small>
+						<small>Watch Match at stadium</small>
 						<BsCheck2Circle fill="green" />
 					</li>
 					<li>
@@ -205,7 +207,8 @@ const Ticket = () => {
 					</li>
 					<li>
 						<small>
-							Eligible for lucky draw for original signed goodies from Salman khan and Kanye west
+							Eligible for lucky draw for original signed goodies
+							from Salman khan and Kanye west
 						</small>
 						<MdOutlineCancel fill="red" />
 					</li>
@@ -214,14 +217,14 @@ const Ticket = () => {
 					setModalOpen={setModalOpen}
 					setTicketType={setTicketType}
 					type="Premium"
-					price="$300.00"
+					price="$400.00"
 				>
 					<li>
-						<small>Watch Stream Online</small>
+						<small>Watch Match Online</small>
 						<BsCheck2Circle fill="green" />
 					</li>
 					<li>
-						<small>Watch Stream at stadium</small>
+						<small>Watch Match at stadium</small>
 						<BsCheck2Circle fill="green" />
 					</li>
 					<li>
@@ -233,12 +236,15 @@ const Ticket = () => {
 					</li>
 					<li>
 						<small>
-							Eligible for lucky draw for original signed goodies from Salman khan and Kanye west
+							Eligible for lucky draw for original signed goodies
+							from Salman khan and Kanye west
 						</small>
 						<BsCheck2Circle fill="green" />
 					</li>
 				</TicketCard>
 			</div>
+
+			<Footer />
 		</>
 	);
 };

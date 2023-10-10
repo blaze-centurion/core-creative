@@ -6,6 +6,7 @@ import Picker from "@emoji-mart/react";
 import Pusher from "pusher-js";
 import Auth from "@/components/Auth";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
+import Footer from "@/components/Footer";
 
 const graphdata = [
 	{
@@ -305,6 +306,7 @@ const Match = () => {
 							</button>
 						</div>
 					</div>
+					<Footer />
 				</>
 			)}
 		</>

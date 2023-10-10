@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ShopCard from "@/components/ShopCard";
 import ShopModal from "@/components/ShopModal";
@@ -103,6 +104,8 @@ const Shop = () => {
 					);
 				})}
 			</div>
+
+			<Footer />
 		</>
 	);
 };

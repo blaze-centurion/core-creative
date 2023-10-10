@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import ShopCard from "@/components/ShopCard";
 import ShopModal from "@/components/ShopModal";
@@ -45,57 +46,55 @@ const Index = () => {
 				<h2 className="container_heading">What's Special?</h2>
 			</div>
 
-			<div className='grid'>
-				<div style={{padding:"1.2rem"}}>
-					<h4>Fight of the century</h4>
-					<p>A fight that cannot be missed!! A match between Kanye West (rapper, record producer, fashion designer) and Salman Khan (actor and film producer).</p>
-				</div>
+			<div className="grid" style={{ padding: "2rem 3.5rem" }}>
+				<article style={{ padding: "1.2rem" }}>
+					<h4
+						style={{
+							fontWeight: "500",
+							marginBottom: "1.2rem",
+							fontSize: "25px",
+						}}
+					>
+						Fight of the century
+					</h4>
+					<p style={{ opacity: "0.9" }}>
+						A fight that cannot be missed!! <br />A match between
+						Kanye West (rapper, record producer, fashion designer)
+						and Salman Khan (actor and film producer).
+					</p>
+				</article>
 
-				
-				<div style={{padding:"1.2rem"}}>
-					<h4>Meet your stars</h4>
-					<p>An opportunity to meet and get an autograph from Salman Khan and Kanye West.</p>
-				</div>
+				<article style={{ padding: "1.2rem" }}>
+					<h4
+						style={{
+							fontWeight: "500",
+							marginBottom: "1.2rem",
+							fontSize: "25px",
+						}}
+					>
+						Meet your stars
+					</h4>
+					<p style={{ opacity: "0.9" }}>
+						An opportunity to meet and get an autograph from Salman
+						Khan and Kanye West.
+					</p>
+				</article>
 
-				
-				<div style={{padding:"1.2rem"}}>
-					<h4>Get signed goodies</h4>
-					<p>10 lucky customers get a original signed goodies from Salman Khan and Kanye West.</p>
-				</div>
-			</div>
-			
-
-			<div
-				className="container"
-				style={{ textAlign: "center", marginTop: "1.5rem" }}
-			>
-				<h2 className="container_heading">Shop</h2>
-			</div>
-
-			<div style={{ marginTop: "2rem" }}>
-				<div
-					className="grid"
-					style={{
-						padding: "1rem 3.5rem",
-						paddingBottom: "0",
-						gridTemplateColumns: "repeat(3,1fr)",
-					}}
-				>
-					{products.map((product) => {
-						return (
-							<ShopCard
-								pid={product.pid}
-								name={product.name}
-								price={product.price}
-								qty={product.qty}
-								img={product.img}
-								setModalOpen={setModalOpen}
-								setPid={setPid}
-								setPrice={setPrice}
-							/>
-						);
-					})}
-				</div>
+				<article style={{ padding: "1.2rem" }}>
+					<h4
+						style={{
+							fontWeight: "500",
+							marginBottom: "1.2rem",
+							fontSize: "25px",
+						}}
+					>
+						Get signed goodies
+					</h4>
+					<p style={{ opacity: "0.9" }}>
+						10 lucky customers get a original signed goodies from
+						Salman Khan and Kanye West.
+					</p>
+				</article>
 			</div>
 
 			<div
@@ -132,11 +131,54 @@ const Index = () => {
 						sapiente iure! Libero, deserunt quibusdam!
 					</p>
 
-					<Link href="/ticket" className="outline" role="button">
+					<Link href="/about" className="outline" role="button">
 						<small>See More</small>
 					</Link>
 				</div>
 			</div>
+
+			<div
+				className="container"
+				style={{ textAlign: "center", marginTop: "1.5rem" }}
+			>
+				<h2 className="container_heading">Shop</h2>
+			</div>
+
+			<div style={{ marginTop: "2rem" }}>
+				<div
+					className="grid"
+					style={{
+						padding: "1rem 3.5rem",
+						paddingBottom: "0",
+						gridTemplateColumns: "repeat(3,1fr)",
+					}}
+				>
+					{products.map((product) => {
+						return (
+							<ShopCard
+								pid={product.pid}
+								name={product.name}
+								price={product.price}
+								qty={product.qty}
+								img={product.img}
+								setModalOpen={setModalOpen}
+								setPid={setPid}
+								setPrice={setPrice}
+							/>
+						);
+					})}
+				</div>
+				<div
+					className="container"
+					style={{ textAlign: "center", marginBottom: "2rem" }}
+				>
+					<Link href="/shop" className="outline" role="button">
+						<small>See More</small>
+					</Link>
+				</div>
+			</div>
+
+			<Footer />
 		</>
 	);
 };
