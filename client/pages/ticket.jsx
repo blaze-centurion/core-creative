@@ -175,6 +175,12 @@ const Ticket = () => {
 						</small>
 						<MdOutlineCancel fill="red" />
 					</li>
+					<li>
+						<small>
+							Eligible for lucky draw for original signed goodies from Salman khan and Kanye west
+						</small>
+						<MdOutlineCancel fill="red" />
+					</li>
 				</TicketCard>
 				<TicketCard
 					setModalOpen={setModalOpen}
@@ -197,6 +203,12 @@ const Ticket = () => {
 						</small>
 						<MdOutlineCancel fill="red" />
 					</li>
+					<li>
+						<small>
+							Eligible for lucky draw for original signed goodies from Salman khan and Kanye west
+						</small>
+						<MdOutlineCancel fill="red" />
+					</li>
 				</TicketCard>
 				<TicketCard
 					setModalOpen={setModalOpen}
@@ -216,6 +228,12 @@ const Ticket = () => {
 						<small>
 							Opportunity to meet and get an autograph of Salman
 							and Kanye
+						</small>
+						<BsCheck2Circle fill="green" />
+					</li>
+					<li>
+						<small>
+							Eligible for lucky draw for original signed goodies from Salman khan and Kanye west
 						</small>
 						<BsCheck2Circle fill="green" />
 					</li>
