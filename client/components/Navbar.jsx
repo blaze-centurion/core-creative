@@ -6,7 +6,9 @@ const Navbar = () => {
 			<nav style={{ padding: "10px 2rem" }}>
 				<ul>
 					<li>
-						<strong>RealmWave</strong>
+					<Link href="/" style={{color:"#bbc6ce", fontWeight:"500"}}>
+						RealmWave
+					</Link>
 					</li>
 				</ul>
 				<ul>

@@ -4,7 +4,7 @@
 	--font-family: "Poppins", sans-serif !important;
 	--primary: #e7643c !important;
 	--primary-hover: #f4511e !important;
-	--primary-focus: rgba(251, 140, 0, 0.125);
+	--primary-focus: rgba(251, 140, 0, 0.125) !important;
 }
 
 .banner_box {

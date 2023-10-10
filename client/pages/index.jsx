@@ -54,7 +54,7 @@ const Index = () => {
 							marginBottom: "1.2rem",
 							fontSize: "25px",
 							paddingBottom:"15px",
-							borderBottom: "1px solid rgb(57,57,57)"
+							borderBottom: "1px solid rgb(57,57,57)",
 						}}
 					>
 						Fight of the century
@@ -74,14 +74,14 @@ const Index = () => {
 							marginBottom: "1.2rem",
 							fontSize: "25px",
 							paddingBottom:"15px",
-							borderBottom: "1px solid rgb(57,57,57)"
+							borderBottom: "1px solid rgb(57,57,57)",
 						}}
 					>
 						Meet your stars
 					</h4>
 					<p style={{ opacity: "0.9", fontSize:"18px",lineHeight:"1.5rem" }}>
 						An opportunity to meet and get an autograph from Salman
-						Khan and Kanye West.
+						Khan and Kanye West after the fight.
 					</p>
 				</article>
 
@@ -93,13 +93,13 @@ const Index = () => {
 							marginBottom: "1.2rem",
 							fontSize: "25px",
 							paddingBottom:"15px",
-							borderBottom: "1px solid rgb(57,57,57)"
+							borderBottom: "1px solid rgb(57,57,57)",
 						}}
 					>
 						Get signed goodies
 					</h4>
 					<p style={{ opacity: "0.9", fontSize:"18px",lineHeight:"1.5rem" }}>
-						10 lucky customers get a original signed goodies from
+						10 lucky customers get an original signed goodies from
 						Salman Khan and Kanye West.
 					</p>
 				</article>
