@@ -34,6 +34,7 @@ const Ticket = () => {
 			alert("Something went wrong");
 		} else {
 			setModalOpen(false);
+			alert(`Ticked has been sent to ${email}`);
 		}
 	};
 

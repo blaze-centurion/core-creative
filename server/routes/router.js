@@ -7,6 +7,7 @@ const nodemailer = require("nodemailer");
 const CommentModel = require("../models/comment");
 const { uuid } = require("uuidv4");
 const PollModel = require("../models/poll");
+const { google } = require("googleapis");
 
 function generatePass() {
 	let pass = "";
@@ -23,39 +24,57 @@ function generatePass() {
 	return pass;
 }
 
-Router.get("/", (req, res) => {
-	var transporter = nodemailer.createTransport({
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
+const REDIRECT_URI = "https://developers.google.com/oauthplayground"; //DONT EDIT THIS
+const MY_EMAIL = "roshan.sharmaa12@gmail.com";
+
+const oAuth2Client = new google.auth.OAuth2(
+	CLIENT_ID,
+	CLIENT_SECRET,
+	REDIRECT_URI
+);
+oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+
+const email = async (to, subject, html) => {
+	const ACCESS_TOKEN = await oAuth2Client.getAccessToken();
+	const transport = nodemailer.createTransport({
 		service: "gmail",
 		auth: {
-			user: "roshan.sharmaa12@gmail.com",
-			pass: "StrongPassword1#",
+			type: "OAuth2",
+			user: MY_EMAIL,
+			clientId: CLIENT_ID,
+			clientSecret: CLIENT_SECRET,
+			refreshToken: REFRESH_TOKEN,
+			accessToken: ACCESS_TOKEN,
 		},
 	});
-
-	var mailOptions = {
-		from: "roshan.sharmaa12@gmail.com",
-		to: "sharmaa.roshan11@gmail.com",
-		subject: "Sending Email using Node.js",
-		text: "That was easy!",
-	};
-
-	transporter.sendMail(mailOptions, function (error, info) {
-		if (error) {
-			console.log("error: " + error);
-		} else {
-			console.log("Email sent: " + info.response);
-		}
+	const from = MY_EMAIL;
+	return new Promise((resolve, reject) => {
+		transport.sendMail({ from, subject, to, html }, (err, info) => {
+			if (err) reject(err);
+			resolve(info);
+		});
 	});
+};
 
+Router.get("/send", async (req, res) => {
 	res.send("Hello");
 });
 
 Router.post("/buyTicket", async (req, res) => {
 	try {
 		const price = { Basic: 50.0, Standard: 100.0, Premium: 300.0 };
+		let infoList = "";
 		for (var i = 1; i <= req.body.qty; i++) {
 			const tid = uuid();
 			const password = generatePass();
+			infoList += `<li>
+					<i>
+						Ticket Id: ${tid} <br/>Ticket Password: ${password}
+					</i>
+				</li>`;
 			const ticket = new TicketModel({
 				...req.body,
 				tid,
@@ -64,8 +83,20 @@ Router.post("/buyTicket", async (req, res) => {
 			});
 			await ticket.save();
 		}
+		const info = await email(
+			req.body.email,
+			"Ticket Booked Successfully!!",
+			`<h2>Your ticked has been booked successfully!!</h2>
+			<br />
+			Information regarding your ticket is given below:
+			<ul>
+				${infoList}
+			</ul>
+			`
+		);
 		return res.status(200).json({
 			message: "Ticket Purchased successfully!",
+			messageId: info.messageId,
 		});
 	} catch (err) {
 		res.status(500).json({ message: "Something went wrong!" });
@@ -120,6 +151,14 @@ Router.get("/products", async (req, res) => {
 Router.post("/orderProduct", async (req, res) => {
 	try {
 		await new OrderModel({ ...req.body }).save();
+		const info = await email(
+			req.body.email,
+			"Product Ordered Successfully!!",
+			`<h2>Your Order has been placed successfully!!</h2>
+			<br />
+			Your order will be shipped withing next 3 or 4 days at ${req.body.address}.
+			`
+		);
 		return res.json({ message: "Product ordered successfully!" });
 	} catch (err) {
 		console.log(err);

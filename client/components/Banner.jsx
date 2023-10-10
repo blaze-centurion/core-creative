@@ -27,7 +27,7 @@ const Banner = () => {
 							<small>Buy the ticket</small>
 						</Link>
 					</div>
-					<div>h</div>
+					<div>{/* <img src="collage.jpe" alt="" /> */}</div>
 				</div>
 			</div>
 		</>
