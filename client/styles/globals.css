@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Nunito:wght@300;400;500&family=Poppins:wght@300;400;500&family=Raleway:wght@300;400;500&display=swap");
+
+:root {
+	--font-family: "Poppins", sans-serif !important;
+	--primary: #e7643c !important;
+	--primary-hover: #f4511e !important;
+	--primary-focus: rgba(251, 140, 0, 0.125);
+}
+
+.banner_box {
+	padding: 3rem 3.5rem;
+}
+.container_heading {
+	font-weight: 500;
+	border-bottom: 2px solid #f4511e;
+	display: initial;
+}
+.card_img {
+	width: 100%;
+	transform: scale(0.9);
+	height: 460px;
+	border-radius: 5px;
+}
+
+.ticket_price {
+	text-align: center;
+	font-weight: 500;
+	font-size: 60px;
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+}
+.card_type {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+.line {
+	width: 50%;
+	height: 2px;
+	background-color: #a26bfa;
+}
+.ticket_card_list {
+	padding: 0;
+	margin-bottom: 2rem;
+}
+.ticket_card_list li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1rem 0;
+}
+
+.ticket_card_list li svg {
+	font-size: 1rem;
+	min-width: 50px;
+}
+
+.comment_box {
+	display: flex;
+	flex-direction: column;
+	height: initial;
+	width: 100%;
+	margin: 0;
+	padding: 1rem 1.5rem;
+	list-style: none;
+	justify-content: flex-end;
+}
+.comment_box li {
+	display: flex;
+	align-items: center;
+}
+.comment_box li .comment_box_profile_img {
+	width: 35px;
+	height: 36px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+.comment_box li .comment_box_profile_img img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.comment_box li span {
+	display: block;
+	background: #11191f;
+	width: max-content;
+	padding: 10px 20px;
+	margin: 5px;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+	font-size: 16px;
+}
+.comment_box li small {
+	font-size: 14px;
+	opacity: 0.7;
+}
+
+.emoji_btn > div {
+	position: absolute;
+	bottom: 70px;
+	right: 0px;
+	z-index: 1000;
+}
