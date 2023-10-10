@@ -42,6 +42,33 @@ const Index = () => {
 				className="container"
 				style={{ textAlign: "center", marginTop: "1.5rem" }}
 			>
+				<h2 className="container_heading">What's Special?</h2>
+			</div>
+
+			<div className='grid'>
+				<div style={{padding:"1.2rem"}}>
+					<h4>Fight of the century</h4>
+					<p>A fight that cannot be missed!! A match between Kanye West (rapper, record producer, fashion designer) and Salman Khan (actor and film producer).</p>
+				</div>
+
+				
+				<div style={{padding:"1.2rem"}}>
+					<h4>Meet your stars</h4>
+					<p>An opportunity to meet and get an autograph from Salman Khan and Kanye West.</p>
+				</div>
+
+				
+				<div style={{padding:"1.2rem"}}>
+					<h4>Get signed goodies</h4>
+					<p>10 lucky customers get a original signed goodies from Salman Khan and Kanye West.</p>
+				</div>
+			</div>
+			
+
+			<div
+				className="container"
+				style={{ textAlign: "center", marginTop: "1.5rem" }}
+			>
 				<h2 className="container_heading">Shop</h2>
 			</div>
 
