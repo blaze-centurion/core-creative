@@ -171,7 +171,7 @@ const Match = () => {
 				,
               }}
             >
-					<video src="video.mp4" style={{maxWidth:'100%', height:'-webkit-fill-available'}} autoPlay controls></video>
+					<video src="boxing_ring_animation.mov" style={{maxWidth:'100%', height:'-webkit-fill-available'}} autoPlay controls></video>
             </div>
             <div
               style={{
